@@ -13,12 +13,16 @@
   <%# <input type="submit" value="Submit"> %>
 <%# </form> %>
 
-<%= form_tag("/users") do %>
-  <%= label_tag(name = "Username:")%>
-  <%= text_field_tag(name = "user[username]") %>
-  <%= label_tag(name = "Email Address:")%>
-  <%= text_field_tag(name = "user[email]") %>
-  <%= label_tag(name = "Password:")%>
-  <%= text_field_tag(name = "user[password]") %>
-  <%= submit_tag("Submit") %>
+<% if false %>
+  <%= form_tag("/users") do %>
+    <%= label_tag(name = "Username:")%>
+    <%= text_field_tag(name = "user[username]") %>
+    <%= label_tag(name = "Email Address:")%>
+    <%= text_field_tag(name = "user[email]") %>
+    <%= label_tag(name = "Password:")%>
+    <%= text_field_tag(name = "user[password]") %>
+    <%= submit_tag("Submit") %>
+  <% end %>
 <% end %>
+
+<%= render partial: "form" %>
