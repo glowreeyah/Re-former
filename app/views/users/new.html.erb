@@ -1,13 +1,24 @@
 <h1>Users #new</h1>
 <p>This is the view for the New User</p>
 
-<form action="/users" method="post" accept-charset="UTF-8">
+<%#
+  <form action="/users" method="post" accept-charset="UTF-8">
   <label for="username">Username:</label>
-  <input type="text" name="username" id="username"><br><br>
+  <input type="text" name="user[username]" id="username"><br><br>
   <label for="email">Email Address:</label>
-  <input type="text" name="email" id="email"><br><br>
+  <input type="text" name="user[email]" id="email"><br><br>
   <label for="password">Password:</label>
-  <input type="text" name="password" id="email"><br><br>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="submit" value="Submit">
-</form>
+  <input type="password" name="user[password]" id="password"><br><br>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>
+  <%# <input type="submit" value="Submit"> %>
+<%# </form> %>
+
+<%= form_tag("/users") do %>
+  <%= label_tag(name = "Username:")%>
+  <%= text_field_tag(name = "user[username]") %>
+  <%= label_tag(name = "Email Address:")%>
+  <%= text_field_tag(name = "user[email]") %>
+  <%= label_tag(name = "Password:")%>
+  <%= text_field_tag(name = "user[password]") %>
+  <%= submit_tag("Submit") %>
+<% end %>
