@@ -1,0 +1,13 @@
+<h1>List of Form Entries</h1>
+
+<ul>
+  <% @user.each do |user|%>
+    <li>
+      <%=user.username%> <%= user.email%>  
+      <%=link_to 'Edit User', edit_user_path(user)%>
+      <%=link_to 'Delete User', user_path(user), method: :delete, data: { confirm: 'Are you sure?' }%>
+    </li>
+  <%end%>
+</ul>
+
+<%= link_to 'New User', new_user_path %>
